@@ -4,12 +4,12 @@ const couponSchema = new mongoose.Schema(
   {
     code: {
       type: String,
-      required: true,
+      required: ture,
       unique: true,
       uppercase: true,
       trim: true,
     },
-    description: { type: String, default: '' },
+    description: { type: String, default: '' }, 
     discountType: {
       type: String,
       enum: ['flat', 'percent'],
