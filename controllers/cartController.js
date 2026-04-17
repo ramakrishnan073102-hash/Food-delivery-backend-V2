@@ -2,7 +2,7 @@ const Cart = require('../models/Cart');
 const MenuItem = require('../models/MenuItem');
 const Coupon = require('../models/Coupon');
 
-// ─── Helper ───────────────────────────────────────────────────────────────────
+//  Helper 
 const getOrCreateCart = async (userId) => {
   let cart = await Cart.findOne({ user: userId }).populate('items.menuItem', 'name price image isAvailable');
   if (!cart) cart = await Cart.create({ user: userId, items: [] });
@@ -122,9 +122,7 @@ const clearCart = async (req, res, next) => {
   }
 };
 
-// @desc    Apply coupon to cart
-// @route   POST /api/cart/coupon
-// @access  Private
+
 const applyCoupon = async (req, res, next) => {
   try {
     const { code } = req.body;

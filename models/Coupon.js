@@ -4,7 +4,7 @@ const couponSchema = new mongoose.Schema(
   {
     code: {
       type: String,
-      required: ture,
+      required: true,
       unique: true,
       uppercase: true,
       trim: true,
